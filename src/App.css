@@ -1,0 +1,36 @@
+*{
+    margin:0 ;
+    padding: 0 ;
+}
+.header{
+    box-shadow: 0px 0px 10px gray;
+    z-index: 2;
+    position: relative;
+}
+.sidebar {
+    z-index: 4;
+
+    width: 200px;
+    box-shadow: 1px 0px 10px gray;
+    height: calc(100vh - 0px); /* Adapta la altura al 100% de la ventana */
+    overflow-y: auto; /* Añade scroll si el contenido es más grande */
+    background-color: #fff; /* Opcional: Ajusta el color de fondo */
+}
+.btnSidebar{
+    z-index: 10;
+
+    position: absolute;
+    height: calc(100vh - 0px); /* Adapta la altura al 100% de la ventana */
+
+}
+.fotoPerfil{
+    width: 100px;
+}
+.btn-modal{
+    padding:20px;
+}
+.btn-delete-modal{
+    top:0;
+    right:0;
+    
+}

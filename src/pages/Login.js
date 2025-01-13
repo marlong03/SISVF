@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import {login} from '../services/login'
 function Login() {
   // Estado para almacenar los valores de los campos
   const [formData, setFormData] = useState({
@@ -18,7 +18,7 @@ function Login() {
   };
 
   // Maneja el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     // Validación básica
     if (!formData.email || !formData.password) {
@@ -27,7 +27,15 @@ function Login() {
     }
     
     console.log('Formulario enviado:', formData);
-    // Aquí puedes realizar la solicitud al servidor o manejar la lógica de autenticación
+    try {
+      const response = await login(formData.email,formData.password)
+      console.log(response);
+      // Validar el rol del usuario y dependiendo el rol redireccionar
+      window.location.href="/dashboard-administrador/graficas/"
+      
+    } catch (error) {
+      alert("error al enviar el login")
+    }
   };
 
   return (
@@ -38,7 +46,7 @@ function Login() {
           <div className='mb-3'>
             <label htmlFor='email' className='form-label'>Correo Electrónico</label>
             <input
-              type='email'
+              type='text'
               className='form-control p-2'
               id='email'
               name='email'

@@ -3,9 +3,23 @@ import api from './auth'
   export const getData = async (endpoint) => {
     try {
       const response = await api.get(endpoint);
+      console.log(response);
+      
       return response.data;  // Retorna los datos obtenidos
     } catch (error) {
-      console.error('Error obteniendo datos tipo votaciones:', error);
+      console.error('Error obteniendo datos usuarios:', error);
+      throw error;  
+    }
+  };
+
+  export const getDataUsuario = async (endpoint) => {
+    try {
+      const response = await api.get(endpoint);
+      console.log(response);
+      
+      return response.data;  // Retorna los datos obtenidos
+    } catch (error) {
+      console.error('Error obteniendo datos usuarios:', error);
       throw error;  
     }
   };
@@ -13,6 +27,8 @@ import api from './auth'
   // Función para crear datos
   export const createData = async (endpoint, data,method) => {
     try {
+        console.log(data);
+        
       let response;
       if (method === 'POST'){
         response = await api.post(endpoint, data);
@@ -21,7 +37,7 @@ import api from './auth'
       }
       return response.data;  // Retorna los datos creados
     } catch (error) {
-      console.error('Error datos tipo votaciones:', error);
+      console.error('Error datos usuarios:', error);
       throw error;
     }
   };

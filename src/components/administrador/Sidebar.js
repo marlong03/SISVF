@@ -1,4 +1,4 @@
-import FotoPerfil from '../logo.svg'
+import FotoPerfil from '../../logo.svg'
 import { useNavigate } from 'react-router-dom';
 function Sidebar() {
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ function Sidebar() {
                 <li className='p-3 list-unstyled text-center w-100  mb-2 '>
                     <img src={FotoPerfil} alt="Foto perfil" name="Foto perfil" title="Foto perfil" className='fotoPerfil' />
                     <h6>Administrador</h6>  
-                    <input type="button" value="Ver perfil" className='btn btn-sm btn-outline-light my-2' />
+                    <input type="button" value="Ver perfil" className='btn btn-sm btn-outline-light my-2' onClick={() => handleNavigation('perfil')}/>
                 </li>
                 <li className='p-3 list-unstyled btn btn-primary w-100' onClick={() => handleNavigation('Graficas')} >Graficas</li>
                 <li className='p-3 list-unstyled btn btn-primary w-100' onClick={() => handleNavigation('tipo-votaciones')}>Tipo Votaciones</li>

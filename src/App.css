@@ -9,7 +9,6 @@
 }
 .sidebar {
     z-index: 4;
-
     width: 200px;
     box-shadow: 1px 0px 10px gray;
     height: calc(100vh - 0px); /* Adapta la altura al 100% de la ventana */

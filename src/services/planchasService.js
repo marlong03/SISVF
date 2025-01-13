@@ -3,9 +3,11 @@ import api from './auth'
   export const getData = async (endpoint) => {
     try {
       const response = await api.get(endpoint);
+      console.log(response);
+      
       return response.data;  // Retorna los datos obtenidos
     } catch (error) {
-      console.error('Error obteniendo datos tipo votaciones:', error);
+      console.error('Error obteniendo datos planchas:', error);
       throw error;  
     }
   };
@@ -21,7 +23,7 @@ import api from './auth'
       }
       return response.data;  // Retorna los datos creados
     } catch (error) {
-      console.error('Error datos tipo votaciones:', error);
+      console.error('Error datos planchas:', error);
       throw error;
     }
   };
